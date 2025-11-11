@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Monitoring Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌡️ IoT Monitoring Dashboard</h1>
+            <p>Real-time sensor monitoring dengan ESP32</p>
+        </header>
+
+        <div class="dashboard">
+            <!-- Kartu Data Sensor -->
+            <div class="sensor-cards">
+                <div class="card temperature">
+                    <div class="card-icon">🌡️</div>
+                    <div class="card-content">
+                        <h3>Suhu</h3>
+                        <div class="value" id="temperature">--°C</div>
+                    </div>
+                </div>
+
+                <div class="card humidity">
+                    <div class="card-icon">💧</div>
+                    <div class="card-content">
+                        <h3>Kelembapan</h3>
+                        <div class="value" id="humidity">--%</div>
+                    </div>
+                </div>
+
+                <div class="card light">
+                    <div class="card-icon">☀️</div>
+                    <div class="card-content">
+                        <h3>Kecerahan</h3>
+                        <div class="value" id="lux">-- Lux</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistik Suhu -->
+            <div class="stats-section">
+                <h3>📊 Statistik Suhu</h3>
+                <div class="stats-cards">
+                    <div class="stat-card max">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-content">
+                            <h4>Suhu Maksimum</h4>
+                            <div class="stat-value" id="tempMax">--°C</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card min">
+                        <div class="stat-icon">❄️</div>
+                        <div class="stat-content">
+                            <h4>Suhu Minimum</h4>
+                            <div class="stat-value" id="tempMin">--°C</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card avg">
+                        <div class="stat-icon">🌡️</div>
+                        <div class="stat-content">
+                            <h4>Suhu Rata-rata</h4>
+                            <div class="stat-value" id="tempAvg">--°C</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kontrol Relay -->
+            <div class="control-panel">
+                <h3>Kontrol Relay</h3>
+                <div class="relay-control">
+                    <button id="relayOn" class="btn btn-on">Nyalakan LED</button>
+                    <button id="relayOff" class="btn btn-off">Matikan LED</button>
+                    <div class="status" id="relayStatus">Status: OFF</div>
+                </div>
+            </div>
+
+            <!-- Grafik -->
+            <div class="chart-container">
+                <canvas id="sensorChart"></canvas>
+            </div>
+
+            <!-- Data History -->
+            <div class="history-section">
+                <h3>Riwayat Data Sensor</h3>
+                <div class="table-container">
+                    <table id="historyTable">
+                        <thead>
+                            <tr>
+                                <th>Waktu</th>
+                                <th>Suhu (°C)</th>
+                                <th>Kelembapan (%)</th>
+                                <th>Kecerahan (Lux)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="json-buttons">
+                    <button id="downloadSemuaData" class="btn json-btn">🔗 LIHAT SEMUA DATA</button>
+                    <button id="downloadStatistikData" class="btn json-btn">📊 LIHAT STATISTIK DATA</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Update terakhir: <span id="lastUpdate">--</span></p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
