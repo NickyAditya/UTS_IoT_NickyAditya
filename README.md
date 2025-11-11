@@ -141,7 +141,7 @@ UTS_IoT_NickyAditya/
 
 **Nicky Aditya**
 - GitHub: [@NickyAditya](https://github.com/NickyAditya)
-- Email: [nicky.aditya@mhs.itenas.ac]
+- Email: [nicky.aditya@mhs.itenas.ac.id]
 
 ## 🙏 Acknowledgments
 
