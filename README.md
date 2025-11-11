@@ -139,7 +139,7 @@ UTS_IoT_NickyAditya/
 
 ## 👨‍💻 Author
 
-**Nicky Aditya**
+**Nicky Aditya Bagus**
 - GitHub: [@NickyAditya](https://github.com/NickyAditya)
 - Email: [nicky.aditya@mhs.itenas.ac.id]
 
